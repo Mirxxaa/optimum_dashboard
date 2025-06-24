@@ -28,7 +28,7 @@ const JobPosting = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/jobs/add-job", {
+      const response = await fetch("https://optimum-server-iqif.onrender.com/jobs/add-job", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(jobData),

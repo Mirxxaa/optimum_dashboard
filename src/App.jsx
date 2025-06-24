@@ -12,6 +12,7 @@ import ContactUs from "./pages/ContactUs";
 import Careers from "./pages/Careers"; // Import your existing Careers page
 import Newsletters from "./pages/Newsletters"; // Import your existing Newsletters page
 import Sidebar from "./components/Sidebar";
+import JobsApplications from "./pages/JobsApplications";
 
 import Jobs from "./pages/Jobs";
 
@@ -35,15 +36,16 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
 
         {/* Dashboard routes with sidebar */}
-        <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route path="contact" element={<ContactUs />} />
-          <Route path="careers" element={<Careers />} />
-          <Route path="newsletters" element={<Newsletters />} />
-
-          <Route path="jobs" element={<Jobs />} />
-          {/* Redirect /dashboard to first dashboard page */}
-          <Route index element={<Navigate to="/dashboard/contact" replace />} />
-        </Route>
+     <Route path="/dashboard" element={<DashboardLayout />}>
+  <Route path="contact" element={<ContactUs />} />
+  <Route path="careers" element={<Careers />} />
+  <Route path="newsletters" element={<Newsletters />} />
+  <Route path="jobs" element={<Jobs />} />
+  <Route path="JobsApplications" element={<JobsApplications />} />
+  
+  {/* Default redirect when visiting /dashboard */}
+  <Route index element={<Navigate to="/dashboard/contact" replace />} />
+</Route>
 
         {/* Redirect root to login page */}
         <Route path="/" element={<Navigate to="/login" replace />} />

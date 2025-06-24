@@ -52,7 +52,7 @@ const Jobs = () => {
     const fetchJobs = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get("http://localhost:5000/jobs/all-jobs");
+        const response = await axios.get("https://optimum-server-iqif.onrender.com/jobs/all-jobs");
 
         // Sort jobs by most recent first
         const sortedJobs = response.data.sort(
@@ -88,7 +88,7 @@ const Jobs = () => {
     );
     if (confirmation) {
       axios
-        .delete(`http://localhost:5000/jobs/delete-job/${jobId}`)
+        .delete(`https://optimum-server-iqif.onrender.com/jobs/delete-job/${jobId}`)
         .then((response) => {
           const updatedJobs = jobs.filter((job) => job._id !== jobId);
           setJobs(updatedJobs);
